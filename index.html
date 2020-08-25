@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" 
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Grand+Hotel&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <title>
+        Wine pairing.
+    </title>
+</head>
+<body>
+    <main>
+        <header class="banner">
+            <h1>Find the perfect Wine pairing</h1>
+            <p>Find a wine that goes well with a food. Food can be a dish name ("steak"), an ingredient name ("salmon"), or a cuisine ("italian").</p>
+            <section id="food-search">
+            <input id="food-input" type="text" placeholder="Italian..."/>
+            <button id="food-submit">Submit</button>
+        </section>
+        </header>
+        
+        <section id="results" class="hidden">
+            <ul id="results-list" aria-live="polite">
+            </ul>
+        </section>
+    </main>
+    
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</html>
