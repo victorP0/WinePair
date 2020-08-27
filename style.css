@@ -22,6 +22,10 @@ header {
 
 }
 
+header p {
+  color: whitesmoke;
+}
+
 h1 {
   font-size: 88px;
   margin-block-start: .3em;
@@ -30,7 +34,7 @@ h1 {
 }
 
 p {
-  color: white;
+  //color: white;
   font-size: 22px;
   font-family: 'Courier New', serif;
   max-width: 800px;
@@ -79,6 +83,30 @@ button:hover {
     margin: auto;
 }
 
+#results {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+#wineDescription{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+#pairedWine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#itemName{
+  margin-right: 50px;
+  max-width: 40vw;
+}
+
 li {
     margin: 10px;
 }
@@ -117,10 +145,11 @@ img:hover {
     padding-top: 10px;
     line-height: 30px;
     background-color: rgba(255, 255, 255, 0.8);
+    text-transform: capitalize;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (min-width: 600px){
