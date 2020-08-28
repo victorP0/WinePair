@@ -7,18 +7,18 @@
 }
 body {
     padding: 0%;
-    //background-image: url('Napa.jpg');
     background-attachment: fixed;
     background-size: cover;
     color: black;
     font-family: 'Courier New', sans-serif;
+    margin: 0;
 }
 
 header {
     font-family: 'Courier New', serif;
     background-color:rgba(184, 49, 76, 0.767);
     text-align: left;
-    padding: 50px 0 0 20px;
+    padding: 50px 0 0 30px;
 
 }
 
@@ -132,6 +132,7 @@ img {
     box-shadow: 3px 3px 3px #333333;
     max-width: 350px;
     border-radius: 10px 10px 10px 10px;
+    align-items: center
 }
 
 img:hover {

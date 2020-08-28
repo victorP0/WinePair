@@ -28,15 +28,25 @@ function displayWineResults(responseJson, searchTerm) {
     $('#results').removeClass('hidden');
 }
 
+function errorMessage (){
+$('#results').html(
+  `<br> 
+  <p>Unfortunately we cannot find a match for the food you searched, please try another food :)</p>`
+)
+$('#results').removeClass('hidden');
+}
+
+
+
 function watchFoodButton() {
     $('section').on('click', '#food-submit', event => {
         event.preventDefault();
         const searchTerm = $('#food-input').val();
         console.log('searchTerm is ' + searchTerm);
         fetch(`https://api.spoonacular.com/food/wine/pairing?food=${searchTerm}&apiKey=27b52f3cd6fc4b49a9d3460e3f593f0b`)
-            .then(response => {let answer = response.json(); console.log(answer); return answer;})
+            .then(response => response.json())
             .then(responseJson => displayWineResults(responseJson,searchTerm))
-            .catch(error => {console.log('Food went wrong. Error was ' + error); alert(error + " - Please try another food");}
+            .catch(error => {console.log('Food went wrong. Error was ' + error); errorMessage();}
             );
     });
 }
