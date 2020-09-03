@@ -34,7 +34,6 @@ h1 {
 }
 
 p {
-  //color: white;
   font-size: 22px;
   font-family: 'Courier New', serif;
   max-width: 800px;
@@ -90,6 +89,12 @@ button:hover {
   align-items: center;
 }
 
+#intro p {
+  text-align: left;
+  font-family: 'Pecita', cursive;
+  padding: 0 2vw;
+}
+
 #wineDescription{
 display: flex;
 flex-direction: row;
@@ -101,10 +106,25 @@ justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
 }
+#pairedWine ul p{
+  font-size: 10px;
+  font-style: italic;
+  font-family:'Helvetica', cursive; 
+}
+#pairedWine ul h3{
+  margin-bottom: 0px; 
+}
 
 #itemName{
   margin-right: 50px;
   max-width: 40vw;
+}
+
+toolTip {
+  list-style: none;
+  font-size: 14px;
+  font-family: 'Helvetica', sans-serif;
+  background: whitesmoke
 }
 
 li {
@@ -130,7 +150,7 @@ h2 {
 
 img {
     box-shadow: 3px 3px 3px #333333;
-    max-width: 350px;
+    max-width: 40vw;
     border-radius: 10px 10px 10px 10px;
     align-items: center
 }
@@ -155,7 +175,7 @@ img:hover {
 
 @media screen and (min-width: 600px){
     img {
-        max-width: 500px;
+        //max-width: 500px;
     }
 
     .ingredients {
