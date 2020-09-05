@@ -1,6 +1,4 @@
-/* * {
-    box-sizing: border-box;
-} */
+
 @font-face {
   font-family: 'Pecita';
   src: url('Pecita.otf');
@@ -174,9 +172,6 @@ img:hover {
 }
 
 @media screen and (min-width: 600px){
-    img {
-        //max-width: 500px;
-    }
 
     .ingredients {
         margin-top: 35px;
