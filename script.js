@@ -9,6 +9,34 @@ fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${paired}&apiKey=${key}
             .catch(error => console.log('Cuisine went wrong'));
 }
 
+function wineItemTemplate(productMatch) {
+  return `<h2>${productMatch.title}</h2>
+        <a href="${productMatch.link}" target="_blank"><img src="${productMatch.imageUrl}" 
+        alt="Photo of ${productMatch.title}"/>
+        </a>`
+}
+
+function wineDescriptionTemplate(description, pairingText){
+  return `<pre><h3>Wine:</h3>${description.title}</pre>
+        <pre><h3>Description:</h3>${description.description}</pre>
+        <pre><h3>Details:</h3>${pairingText}</pre>`
+}
+
+function pairedWineTemplate (pairedWines){
+    const paired = [];
+    for (let i = 0; i < pairedWines.length; i++) {
+        paired.push(`<li class="wine-description">
+                      <span class="wine-name">${pairedWines[i]}</span>
+                      <span class="wineText"></span>
+                      </li>`);
+    }
+  return `
+        <ul class="paired">
+        <h3>Paired Wines (Hover to find out more):</h3>
+        ${paired.join('')}
+        </ul>`
+}
+
 function displayWineResults(responseJson, searchTerm) {
     // if there are previous results, remove them
     $('#itemName').empty();
@@ -16,25 +44,11 @@ function displayWineResults(responseJson, searchTerm) {
     $('#descriptionText').empty();
 
     // create list for paired Wines
-    const paired = [];
-    for (let i = 0; i < responseJson.pairedWines.length; i++) {
-        paired.push(`<li class="wine-description">
-                      <span class="wine-name">${responseJson.pairedWines[i]}</span>
-                      <span class="wineText"></span>
-                      </li>`);
-    }
 
-    $('#itemName').html(`
-        <h2>${responseJson.productMatches[0].title}</h2>
-        <a href="${responseJson.productMatches[0].link}" target="_blank"><img src="${responseJson.productMatches[0].imageUrl}" 
-        alt="Photo of ${responseJson.productMatches.title}"/>
-        </a>`)
 
-    $('#pairedWine').html(`
-        <ul class="paired">
-        <h3>Paired Wines (Hover to find out more):</h3>
-        ${paired.join('')}
-        </ul>`)
+    $('#itemName').html(wineItemTemplate(responseJson.productMatches[0]));
+        
+    $('#pairedWine').html(pairedWineTemplate(responseJson.pairedWines));
 
     $('.wine-description').hover( function() {
 
@@ -53,12 +67,8 @@ function displayWineResults(responseJson, searchTerm) {
       $(this).children('.wineText').find( "toolTip" ).last().hide();  
     });
             
+    $('#descriptionText').html(wineDescriptionTemplate(responseJson.productMatches[0], responseJson.pairingText))
 
-    $('#descriptionText').html(` 
-        <pre><h3>Wine:</h3>${responseJson.productMatches[0].title}</pre>
-        <pre><h3>Description:</h3>${responseJson.productMatches[0].description}</pre>
-        <pre><h3>Details:</h3>${responseJson.pairingText}</pre>
-        `)
 
   //display the results section  
     $('#results').removeClass('hidden');

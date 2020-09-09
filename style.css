@@ -28,7 +28,7 @@ header p {
 }
 
 h1 {
-  font-size: 38px;
+  font-size: 88px;
   margin-block-start: .3em;
   margin-block-end: 0.9em;
   font-family: 'Pecita', cursive;
@@ -89,6 +89,7 @@ button:hover {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
+  margin-left: 20px;
 }
 
 #intro p {
@@ -99,7 +100,7 @@ button:hover {
 
 #wineDescription{
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: space-evenly;
 }
 
@@ -174,15 +175,17 @@ img:hover {
 .hidden {
     display: none !important;
 }
-@media screen and (min-width: 400px){
+@media screen and (max-width: 600px){
     #wineDescription{
-    flex-direction: row; }
-
+    flex-direction: column; }
     h1{
-      font-size:88px;
+      font-size:38px;
     }
     .ingredients {
         margin-top: 35px;
+    }
+    #results{
+      margin-left: 20px;
     }
 }
 
