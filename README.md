@@ -1,8 +1,8 @@
-<h1> Wine pair API </h1>
+<h1> Wine pair App </h1>
 
 Wine pair.
 
-https://victorp0.github.io/WinePair/
+Demo: https://victorp0.github.io/WinePair/
 
 <img src="screenshot3.png" width = 900>
 
@@ -13,6 +13,12 @@ https://victorp0.github.io/WinePair/
 
 Wine pair leverages the spoontacular API to help user find a wine that goes well with a food. Food can be a dish name ("steak"), an ingredient name ("salmon"), or a cuisine ("italian"). Users can also hover over the paired wines to find dishes that goes well with a given wine.
 
-(HTML5 / CSS / JavaScript / jquery)
+## API Documentation
+
+The Wine pair app uses the spoonacular API (https://spoonacular.com/food-api/docs#Get-Wine-Pairing)
+
+## Technologies used
+
+(HTML5 / CSS / Vanilla JavaScript / jquery)
 
 
