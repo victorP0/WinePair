@@ -1,8 +1,10 @@
 <h1> Wine pair App </h1>
 
-Wine pair.
+This is the frontend for the Wine pair app.
 
-Demo: https://victorp0.github.io/WinePair/
+Link to live demo: https://victorp0.github.io/WinePair/
+
+## Screenshots
 
 <img src="screenshot3.png" width = 900>
 
